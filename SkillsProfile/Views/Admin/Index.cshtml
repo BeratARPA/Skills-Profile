@@ -1,0 +1,35 @@
+﻿@using SkillsProfile.Models.Class
+@using System.Globalization;
+
+@model List<Skill>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavBar.cshtml";
+}
+
+
+<a class="form-control text-center btn btn-secondary btn-lg btn-block" style="margin-bottom:10px">Hoş geldin @CultureInfo.CurrentCulture.TextInfo.ToTitleCase(AdminUserİnformation.Name).</a>
+
+<table class="table table-striped table-dark">
+
+    <tr class="text-center">
+        <th>Açıklama</th>
+        <th>Değer</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var skill in Model)
+    {
+        <tr class="text-center">
+            <td>@skill.Description</td>
+            <td>@skill.Value</td>
+            <td><a href="/Admin/YetenekSil/@skill.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/YetenekGetir/@skill.Id" class="btn btn-primary">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/YeniYetenekEkle/" class="btn btn-dark">Yeni Yetenek Kaydet</a>

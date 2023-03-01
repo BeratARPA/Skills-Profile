@@ -1,0 +1,34 @@
+﻿@model SkillsProfile.Models.Class.Skill
+
+@{
+    ViewBag.Title = "YetenekGetir";
+    Layout = "~/Views/Shared/_LayoutNavBar.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div class="input-group" style="margin-bottom:10px">
+        <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text-fill" viewBox="0 0 16 16">
+                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z" />
+            </svg>
+        </span>
+
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @placeholder = "Açıklama", @required = "required" })
+    </div>
+
+    <div class="input-group" style="margin-bottom:10px">
+        <span class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+            </svg>
+        </span>
+
+        @Html.TextBoxFor(x => x.Value, new { @class = "form-control", @type = "number", @min = "0", @max = "100", @placeholder = "Değer", @required = "required" })
+    </div>
+
+    <div style="margin-bottom:10px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+
+</form>
